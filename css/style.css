@@ -1,0 +1,163 @@
+body {
+  font-family: "Rubik Doodle Shadow", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  margin: 0px;
+  background-color: rgb(243, 243, 213);
+}
+.header {
+  max-width: 85%;
+  margin: 0 auto;
+  font-weight: 400;
+  font-style: normal;
+  background-color: rgb(44, 154, 168);
+  display: flex;
+  justify-content: center;
+}
+.card {
+  font-size: 46px;
+  font-weight: 500;
+  height: 3em;
+  width: 3em;
+  background-color: beige;
+  border-radius: 20px;
+  border: 1px solid gainsboro;
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.main-selected {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+.card_desription {
+  font-size: 24px;
+  margin: auto;
+}
+.card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.heading_already_holiday {
+  font-weight: 300;
+  font-style: normal;
+  background-color: rgb(243, 243, 213);
+  font-size: 40px;
+  border-radius: 10px;
+  padding: 10px;
+}
+.select_section {
+  display: flex;
+  justify-content: center;
+  margin: 50px;
+}
+
+@media all and (min-width: 320px) and (max-width: 640px) {
+  .header {
+    max-width: 100%;
+    display: flex;
+    justify-self: center;
+    align-self: center;
+  }
+  h1 {
+    padding-left: 15px;
+    font-size: 26px;
+  }
+
+  .card {
+    font-size: 24px;
+    font-weight: 500;
+    height: 3em;
+    width: 3em;
+    background-color: beige;
+    border-radius: 20px;
+    border: 1px solid gainsboro;
+    margin: 1px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .card_desription {
+    font-size: 14px;
+    margin: auto;
+  }
+  .heading_already_holiday {
+    font-weight: 300;
+    font-style: normal;
+    background-color: rgb(243, 243, 213);
+    font-size: 24px;
+    border-radius: 10px;
+    padding: 15px;
+  }
+}
+@media all and (min-width: 641px) and (max-width: 800px) {
+  .header {
+    max-width: 100%;
+    display: flex;
+    justify-self: center;
+    align-self: center;
+  }
+  h1 {
+    padding-left: 15px;
+    font-size: 26px;
+  }
+
+  .card {
+    font-size: 34px;
+    font-weight: 500;
+    height: 3em;
+    width: 3em;
+    background-color: beige;
+    border-radius: 20px;
+    border: 1px solid gainsboro;
+    margin: 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .card_desription {
+    font-size: 18px;
+    margin: auto;
+  }
+  .heading_already_holiday {
+    font-weight: 300;
+    font-style: normal;
+    background-color: rgb(243, 243, 213);
+    font-size: 28px;
+    border-radius: 10px;
+    padding: 15px;
+  }
+}
+/* custom select */
+/*
+.select_section{
+  display: flex;
+  justify-content: center;
+  margin-top: 5em;
+}
+.custom_select{
+  width: 200px;
+  position: relative;
+  font-family: "Rubik Doodle Shadow", system-ui;
+}
+.custom_select .select{
+  display: none;
+}
+.select-selected{
+  background-color: rgb(243, 243, 213);
+}
+.select-selected::after{
+  position: absolute;
+  content: "";
+  border: 6px solid transparent;
+  border-color: rgb(59, 168, 44) transparent transparent transparent;
+
+}*/

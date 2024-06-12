@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <!-- one font
+
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+        rel="stylesheet"
+      />
+    -->
+    <!--second font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Ferien Countdown</title>
+  </head>
+  <body>
+    <header class="header">
+      <h1>Sommerferien Countdown</h1>
+    </header>
+    <section class="main" hidden>
+
+        <div class="card-container">
+          <div class="card days">--</div>
+          <p class="day_paragraph card_desription">Tage</p>
+        </div>
+        <div class="card-container">
+          <div class="card hours">--</div>
+          <p class="hour_paragraph card_desription">Stunden</p>
+        </div>
+        <div class="card-container">
+          <div class="card minutes">--</div>
+          <p class="minute_paragraph card_desription">Minuten</p>
+        </div>
+        <div class="card-container">
+          <div class="card seconds">--</div>
+          <p class="second_paragraph card_desription">Sekunden</p>
+        </div>
+    
+
+      </section>
+    <section class="select_section">
+      <select class="select" name="regions">
+        <option value="">--Bitte Bundesland auswählen--</option>
+        <option value="by">Bayern</option>
+        <option value="bw">Baden-Württemberg</option>
+        <option value="be">Berlin</option>
+        <option value="bb">Brandenburg</option>
+        <option value="hb">Bremen</option>
+        <option value="hh">Hamburg</option>
+        <option value="he">Hessen</option>
+        <option value="mv">Mecklenburg-Vorpommern</option>
+        <option value="ni">Niedersachsen</option>
+        <option value="nw">Nordrhein-Westfalen</option>
+        <option value="rp">Rheinland-Pfalz</option>
+        <option value="sl">Saarland</option>
+        <option value="sn">Sachsen</option>
+        <option value="st">Sachsen-Anhalt</option>
+        <option value="sh">Schleswig-Holstein</option>
+        <option value="th">Thüringen</option>
+
+      </select>
+      <div class="custom_select" hidden>
+        <select class="custom-select" name="regions">
+          <option value="">--Bundesland auswählen--</option>
+          <option value="by">Bayern</option>
+          <option value="bw">Baden-Württemberg</option>
+          <option value="be">Berlin</option>
+          <option value="bb">Brandenburg</option>
+          <option value="hb">Bremen</option>
+          <option value="hh">Hamburg</option>
+          <option value="he">Hessen</option>
+          <option value="mv">Mecklenburg-Vorpommern</option>
+          <option value="ni">Niedersachsen</option>
+          <option value="nw">Nordrhein-Westfalen</option>
+          <option value="rp">Rheinland-Pfalz</option>
+          <option value="sl">Saarland</option>
+          <option value="sn">Sachsen</option>
+          <option value="st">Sachsen-Anhalt</option>
+          <option value="sh">Schleswig-Holstein</option>
+          <option value="th">Thüringen</option>
+  
+        </select>
+      </div>
+
+    </section>
+    <footer>
+      <div class="footer"></div>
+    </footer>
+    <script src="./js/index.js" type="module"></script>
+  </body>
+</html>
