@@ -45,6 +45,8 @@ body {
 }
 
 .heading_already_holiday {
+  display: flex;
+  justify-content: center;
   font-weight: 300;
   font-style: normal;
   background-color: rgb(243, 243, 213);

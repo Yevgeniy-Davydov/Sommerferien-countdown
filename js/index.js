@@ -1,5 +1,3 @@
-
-
 const days = document.querySelector(".days");
 const hours = document.querySelector(".hours");
 const minutes = document.querySelector(".minutes");
@@ -15,7 +13,6 @@ const select = document.querySelector(".select");
 
 const handleSelect = () => {
   // let endDate = new Date("May 24, 2024 00:00:00").getTime(); // test for ferien - now date
-  
 
   let endDate;
 
@@ -84,59 +81,62 @@ const handleSelect = () => {
       endDate = new Date("Jun 20, 2024 00:00:00").getTime();
 
       break;
-      default: // "by">Bayern
+    default: // "by">Bayern
       endDate = new Date("Jul 29, 2024 00:00:00").getTime();
       break;
-
   }
 
   changeCountdown(endDate);
- 
-  main.classList.add("main-selected")
+
+  main.classList.add("main-selected");
 };
 
+function createCards(difference) {
+  let amountDays = Math.floor(difference / 86400000);
+  days.textContent = amountDays < 10 ? "0" + amountDays : amountDays;
 
+  let amountHours = Math.floor((difference % (1000 * 60 * 60 * 24)) / 3600000);
+  hours.textContent = amountHours < 10 ? "0" + amountHours : amountHours;
 
-function changeCountdown(endDate){
-  
-  
-  let countdownInterval = setInterval(countdown, 1000);
-  
-  function countdown() {
-    console.log(endDate)
-    let now = new Date().getTime();
-    
-    let difference = endDate - now;
-    
-    let amountDays = Math.floor(difference / 86400000);
-    days.textContent = amountDays < 10 ? "0" + amountDays : amountDays;
-    
-    let amountHours = Math.floor((difference % (1000 * 60 * 60 * 24)) / 3600000);
-    hours.textContent = amountHours < 10 ? "0" + amountHours : amountHours;
-    
-    let amountMinutes = Math.floor((difference % (1000 * 60 * 60)) / 60000);
-    minutes.textContent =
+  let amountMinutes = Math.floor((difference % (1000 * 60 * 60)) / 60000);
+  minutes.textContent =
     amountMinutes < 10 ? "0" + amountMinutes : amountMinutes;
-    
-    let amountSeconds = Math.floor((difference % (1000 * 60)) / 1000);
-    seconds.textContent =
+
+  let amountSeconds = Math.floor((difference % (1000 * 60)) / 1000);
+  seconds.textContent =
     amountSeconds < 10 ? "0" + amountSeconds : amountSeconds;
-    
-    dayDescription.textContent = amountDays === 1 ? "Tag" : "Tage";
-    hourDescription.textContent = amountHours === 1 ? "Stunde" : "Stunden";
-    minuteDescription.textContent = amountMinutes === 1 ? "Minute" : "Minuten";
-    secondDescription.textContent = amountSeconds === 1 ? "Sekunde" : "Sekunden";
-    
+
+  dayDescription.textContent = amountDays === 1 ? "Tag" : "Tage";
+  hourDescription.textContent = amountHours === 1 ? "Stunde" : "Stunden";
+  minuteDescription.textContent = amountMinutes === 1 ? "Minute" : "Minuten";
+  secondDescription.textContent = amountSeconds === 1 ? "Sekunde" : "Sekunden";
+}
+
+function changeCountdown(endDate) {
+  let countdownInterval = setInterval(countdown, 1000);
+
+  function countdown() {
+    let newDiv = document.createElement("DIV");
+    newDiv.innerHTML = "";
+
+    let now = new Date().getTime();
+
+    let difference = endDate - now;
+    createCards(difference);
+
     if (difference < 0) {
       clearInterval(countdownInterval);
-      main.innerHTML = `<h2 class = heading_already_holiday>Es sind gerade Sommerferien<br>in diesem Bundesland</h2>`;
+      let mainSection = document.querySelector(".main-section");
+      main.classList.remove("main-selected");
+      mainSection.append(newDiv);
+      newDiv.innerHTML = `<h2 class = "heading_already_holiday">Es sind gerade Sommerferien<br>in diesem Bundesland</h2>`;
     }
-    select.addEventListener("change", function clearCountdown (){
+
+    select.addEventListener("change", function clearCountdown() {
       clearInterval(countdownInterval);
-    
+      newDiv.innerHTML = "";
     });
   }
-  
 }
 
 select.addEventListener("change", handleSelect);
